@@ -1,0 +1,111 @@
+---
+slug: /
+title: '認識 JSX'
+keywords:
+  - JSX
+  - React Component
+---
+
+## 重要概念
+
+- JavaScript 並不認得 JSX
+
+## 在 JSX 中帶入變數
+
+```jsx
+ReactDOM.render(<div>Hello, world!</div>, document.getElementById('root'));
+```
+
+會長這樣：
+
+export const Hello = () => <div>Hello, world!</div>;
+
+<Hello />
+
+---
+
+```jsx
+const framework = 'React';
+ReactDOM.render(
+  <div>Hello, {framework}!</div>,
+  document.getElementById('root')
+);
+```
+
+會長這樣：
+
+export const HelloReact = ({ framework }) => <div>Hello, {framework}!</div>;
+
+<HelloReact framework="React" />
+
+---
+
+## 在 JSX 中帶入表達式
+
+```jsx
+const price = '25500';
+ReactDOM.render(
+  <div>
+    原價是 {price}，目前特價 {price * 0.9}
+  </div>,
+  document.getElementById('root')
+);
+```
+
+會長這樣：
+
+export const WithExpression = ({ price }) => (
+  <div>
+    原價是 {price}，目前特價 {price * 0.9}
+  </div>
+);
+
+<WithExpression price={25500} />
+
+---
+
+## 把 JSX 當成一個變數
+
+- JSX 需要用 `()` 來讓 JavaScript 知道這個是一個「單元」
+
+```jsx
+const price = 25500;
+const product = (
+  <div>
+    原價是 {price}，目前特價 {price * 0.9}
+  </div>
+);
+
+ReactDOM.render(product, document.getElementById('root'));
+```
+
+## JSX 中一樣可以回傳另一個函式
+
+- 讓一個函式回傳另一個 JSX
+
+```jsx
+const price = 25500;
+const product = () => (
+  <div>
+    原價是 {price}，目前特價 {price * 0.9}
+  </div>
+);
+
+ReactDOM.render(product(), document.getElementById('root'));
+```
+
+### 建立 React Component
+
+- React Component 就是會回傳 JSX 的 JavaScript 函式
+- React Component 的第一個字**需要「大寫」**
+
+```jsx
+const price = 25500;
+const Product = () => (
+  <div>
+    原價是 {price}，目前特價 {price * 0.9}
+  </div>
+);
+
+ReactDOM.render(<Product />, document.getElementById('root'));
+```
