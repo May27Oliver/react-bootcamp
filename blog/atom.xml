@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://pjchender.github.io/blog</id>
-    <title>PJCHENder React Bootcamp Blog</title>
+    <title>從 Hooks 開始，讓你的網頁 React 起來 Blog</title>
     <updated>2019-05-30T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://pjchender.github.io/blog"/>
-    <subtitle>PJCHENder React Bootcamp Blog</subtitle>
+    <subtitle>從 Hooks 開始，讓你的網頁 React 起來 Blog</subtitle>
     <icon>https://pjchender.github.io/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
