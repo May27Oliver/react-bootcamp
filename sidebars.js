@@ -1,9 +1,50 @@
 module.exports = {
-  docs: [
+  book: [
+    {
+      type: 'category',
+      label: 'Chapter 0 - 前言',
+      items: ['book/ch0/0-1', 'book/ch0/0-2', 'book/ch0/0-3'],
+    },
+    {
+      type: 'category',
+      label: 'Chapter 1 - React 中一定會用到的 JavaScript 語法',
+      items: [
+        'book/ch1/1-1',
+        'book/ch1/1-2',
+        'book/ch1/1-3',
+        'book/ch1/1-4',
+        'book/ch1/1-5',
+        'book/ch1/1-6',
+        'book/ch1/1-7',
+        'book/ch1/1-8',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Chapter 2 - React Hooks 起來：useState 與 JSX 的使用',
+      items: [
+        'book/ch2/2-1',
+        'book/ch2/2-2',
+        'book/ch2/2-3',
+        'book/ch2/2-4',
+        'book/ch2/2-5',
+        'book/ch2/2-6',
+        'book/ch2/2-7',
+        'book/ch2/2-8',
+        'book/ch2/2-9',
+        'book/ch2/2-10',
+        'book/ch2/2-11',
+        'book/ch2/2-12',
+        'book/ch2/2-13',
+        'book/ch2/2-14',
+      ],
+    },
+  ],
+  bootcamp: [
     {
       type: 'category',
       label: 'Week1 - React 基礎',
-      items: ['week1/jsx-basic'],
+      items: ['bootcamp/week1/jsx-basic'],
     },
     // {
     //   type: 'category',

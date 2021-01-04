@@ -26,15 +26,26 @@ module.exports = {
       },
       items: [
         {
-          to: '/docs',
-          activeBasePath: 'docs',
-          label: 'Docs',
+          to: '/docs/bootcamp',
+          activeBasePath: '/docs/bootcamp',
+          label: 'Bootcamp',
+          position: 'left',
+        },
+        {
+          to: '/docs/book',
+          activeBasePath: '/docs/book',
+          label: 'Book',
           position: 'left',
         },
         // { to: 'blog', label: 'Blog', position: 'left' },
         {
           href: 'https://github.com/pjchender/react-bootcamp',
           label: 'GitHub',
+          position: 'right',
+        },
+        {
+          href: 'https://www.tenlong.com.tw/products/9789864345083',
+          label: '購書去',
           position: 'right',
         },
       ],
@@ -46,11 +57,11 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: '從 Hooks 開始讓網頁 React 起來',
+              label: 'Facebook 讀者社群',
               href: 'https://www.facebook.com/groups/reacthooks',
             },
             {
-              label: 'PJCHENder網頁開發咩腳',
+              label: 'PJCHENder 網頁開發咩腳',
               href: 'https://www.facebook.com/pjchender',
             },
           ],
@@ -67,7 +78,7 @@ module.exports = {
               to: 'https://react-camp.slack.com',
             },
             {
-              label: 'website',
+              label: '官方網站',
               to: 'https://tw.alphacamp.co/',
             },
           ],
@@ -75,10 +86,10 @@ module.exports = {
         {
           title: 'More',
           items: [
-            // {
-            //   label: 'Blog',
-            //   to: 'blog',
-            // },
+            {
+              label: '購書去',
+              href: 'https://www.tenlong.com.tw/products/9789864345083',
+            },
             {
               label: 'PJCHENder 那些沒告訴你的小細節',
               href: 'https://pjchender.blogspot.com/',
