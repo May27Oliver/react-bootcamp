@@ -16,7 +16,7 @@ module.exports = {
       contextualSearch: true,
     },
     colorMode: {
-      defaultMode: 'night',
+      defaultMode: 'dark',
     },
     navbar: {
       title: 'React Bootcamp',
