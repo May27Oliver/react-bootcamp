@@ -44,7 +44,12 @@ module.exports = {
     {
       type: 'category',
       label: 'Week1 - React 基礎',
-      items: ['bootcamp/week1/jsx-basic'],
+      items: [
+        'bootcamp/week1/jsx-basic',
+        'bootcamp/week1/event-handler',
+        'bootcamp/week1/use-state',
+        'bootcamp/week1/class-component',
+      ],
     },
     // {
     //   type: 'category',
