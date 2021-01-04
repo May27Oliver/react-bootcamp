@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'PJCHENder React Bootcamp',
-  tagline: '從 Hooks 開始，讓你的網頁 React 起來',
+  title: '從 Hooks 開始，讓你的網頁 React 起來',
+  tagline: 'React Bootcamp',
   url: 'https://pjchender.github.io',
   baseUrl: '/react-bootcamp/',
   onBrokenLinks: 'throw',

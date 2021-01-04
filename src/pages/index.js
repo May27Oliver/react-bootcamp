@@ -8,48 +8,59 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 const features = [
   {
-    title: 'Easy to Use',
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
+    title: '計數器',
+    imageUrl: 'img/react-counter.png',
+    link: 'https://github.com/pjchender/learn-react-from-hooks-counter',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        從最基本的計數器開始，了解 React UI 的操作，JSX 撰寫、CSS
+        樣式使用以及事件的綁定。
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
+    title: '網速單位換算器',
+    imageUrl: 'img/speed-converter.png',
+    link:
+      'https://github.com/pjchender/learn-react-from-hooks-internet-speed-converter',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        透過網速單位換算器熟悉 React
+        中資料（state）的概念，了解元件的拆分，以及資料如何透過 props
+        在不同的元件間傳遞。
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    imageUrl: 'img/undraw_docusaurus_react.svg',
+    title: '台灣即時天氣 App',
+    imageUrl: 'img/weather-card.png',
+    link:
+      'https://github.com/pjchender/learn-react-from-hook-realtime-weather-app',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        實際串接中央氣象局 API 取得最即時的天氣資訊，最終部署到 Github Pages
+        上，讓每個人都看得到你的作品。
       </>
     ),
   },
 ];
 
-function Feature({ imageUrl, title, description }) {
+function Feature({ imageUrl, title, link, description }) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
-    <div className={clsx('col col--4', styles.feature)}>
+    <div className={clsx('col col--4', styles.feature, 'text--center')}>
       {imgUrl && (
-        <div className="text--center">
+        <a
+          className="text--center mb-3 d-block"
+          href={link}
+          target="_blank"
+          rel="noreferrer noopener"
+        >
           <img className={styles.featureImage} src={imgUrl} alt={title} />
-        </div>
+        </a>
       )}
       <h3>{title}</h3>
-      <p>{description}</p>
+      <p className="text--left">{description}</p>
     </div>
   );
 }
@@ -65,13 +76,12 @@ function Home() {
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <p className="hero__subtitle text--secondary mt-5 mb-5">
+            {siteConfig.tagline}
+          </p>
           <div className={styles.buttons}>
             <Link
-              className={clsx(
-                'button button--outline button--secondary button--lg',
-                styles.getStarted
-              )}
+              className={clsx('button button--lg', styles.getStarted)}
               to={useBaseUrl('docs/book')}
             >
               Get Started
