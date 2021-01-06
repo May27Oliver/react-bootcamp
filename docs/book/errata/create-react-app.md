@@ -1,7 +1,7 @@
 ---
 slug: /book
 id: 'create-react-app'
-title: '使用 Create React App 建立專案'
+title: 'CRA v4 建立專案方式異動'
 sidebar_label: 'CRA 建立專案方式異動'
 keywords:
   - create react app

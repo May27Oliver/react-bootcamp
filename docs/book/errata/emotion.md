@@ -1,6 +1,6 @@
 ---
 id: 'emotion'
-title: '使用 Emotion 來撰寫 Styled Component'
+title: 'emotion 11 安裝方式異動'
 sidebar_label: 'emotion 安裝方式異動'
 keywords:
   - emotion
