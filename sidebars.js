@@ -2,6 +2,11 @@ module.exports = {
   book: [
     {
       type: 'category',
+      label: '更新與勘誤',
+      items: ['book/errata/create-react-app', 'book/errata/emotion'],
+    },
+    {
+      type: 'category',
       label: 'Chapter 0 - 前言',
       items: ['book/ch0/0-1', 'book/ch0/0-2', 'book/ch0/0-3'],
     },
