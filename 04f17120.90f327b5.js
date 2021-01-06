@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{71:function(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Welcome","permalink":"/react-bootcamp/blog/welcome"},{"title":"Hello","permalink":"/react-bootcamp/blog/hello-world"},{"title":"Hola","permalink":"/react-bootcamp/blog/hola"}]}')}}]);
