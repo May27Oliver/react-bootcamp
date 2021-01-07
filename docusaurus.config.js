@@ -103,6 +103,7 @@ module.exports = {
       trackingID: 'UA-39523593-4',
     },
   },
+  plugins: ['docusaurus-plugin-sass'],
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -118,7 +119,7 @@ module.exports = {
           editUrl: 'https://github.com/pjchender/react-bootcamp/edit/main/',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve('./src/css/custom.scss'),
         },
       },
     ],
