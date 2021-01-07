@@ -52,6 +52,7 @@ module.exports = {
       items: [
         'bootcamp/week1/jsx-basic',
         'bootcamp/week1/use-state',
+        'bootcamp/week1/when-to-use-function-in-setstate',
         'bootcamp/week1/event-handler',
         'bootcamp/week1/class-component',
       ],

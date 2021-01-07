@@ -33,20 +33,26 @@ state 要改變一定要使用 setState 的方法，手動改變 state 是沒有
 import { useState } from 'react';
 
 // 這是陣列的解構賦值
-const [counter, setCounter] = useState(5);
+const [count, setCount] = useState(5);
 ```
 
-透過 `setCounter` 可以直接設值
+### 直接帶入值
+
+透過 `setCount` 可以直接設值，在參數中帶入的內容會直接變成新的 `count`：
 
 ```jsx
-setCounter(10);
+setCount(10);
 ```
 
-`setCounter` 中也可以帶入 function，藉此取出上一次的 state：
+### 帶入 function
+
+`setCount` 中也可以帶入 function，藉此取出上一次的 state，這裡就是 `prevCount`：
 
 ```jsx
-setCounter((prevCounter) => prevCounter + 1);
+setCount((prevCount) => prevCount + 1);
 ```
+
+至於什麼時候最好使用 function 的方式來取出前ㄧ次的值，請參考「[useState 掘竅](when-to-use-function-in-setstate.md)」。
 
 ## 建議閱讀
 
