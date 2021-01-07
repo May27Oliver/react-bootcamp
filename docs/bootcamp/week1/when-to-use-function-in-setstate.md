@@ -14,7 +14,7 @@ keywords:
 
 ## 什麼時候該在 useState 中透過 function 取出前一次的狀態
 
-在 [useState 基礎](use-state.md)中，我們已經知道可以在 `useState` 中可以以帶入 function 的方式取得前一次的資料狀態（state）。
+在 [useState 基礎](use-state.mdx)中，我們已經知道可以在 `useState` 中可以以帶入 function 的方式取得前一次的資料狀態（state）。
 
 在一般的情況下，你可能會覺得這兩種做法在結果上沒不同，但永遠要記得 JavaScript 經常有非同步的情況會發生，所以如果「新的值」是根據「前一次的值」而有改變，例如，新的 `count` 是根據前一次的 `count` 來產生時，**強烈建議** 在 setState 中使用 function 的方式，取得前一次的 state 後再進行變更。
 
