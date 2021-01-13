@@ -44,6 +44,20 @@ module.exports = {
         'book/ch2/2-14',
       ],
     },
+    {
+      type: 'category',
+      label: 'Chapter 3 - React 元件間的資料傳遞：props 的應用',
+      items: [
+        'book/ch3/3-1',
+        'book/ch3/3-2',
+        'book/ch3/3-3',
+        'book/ch3/3-4',
+        'book/ch3/3-5',
+        'book/ch3/3-6',
+        'book/ch3/3-7',
+        'book/ch3/3-8',
+      ],
+    },
   ],
   bootcamp: [
     {
@@ -57,10 +71,10 @@ module.exports = {
         'bootcamp/week1/class-component',
       ],
     },
-    // {
-    //   type: 'category',
-    //   label: 'Week2 - React 的資料流',
-    //   items: [''],
-    // },
+    {
+      type: 'category',
+      label: 'Week2 - React 的元件拆分與資料流',
+      items: ['bootcamp/week2/todo-mvc'],
+    },
   ],
 };
