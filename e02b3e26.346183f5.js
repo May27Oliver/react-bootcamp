@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[59],{132:function(a){a.exports=JSON.parse('{"allTagsPath":"/react-bootcamp/blog/tags","slug":"docusaurus","name":"docusaurus","count":3,"permalink":"/react-bootcamp/blog/tags/docusaurus"}')}}]);
