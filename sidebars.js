@@ -58,6 +58,19 @@ module.exports = {
         'book/ch3/3-8',
       ],
     },
+    {
+      type: 'category',
+      label: 'Chapter 4 -在 JavaScript 中撰寫 CSS 樣式',
+      items: [
+        'book/ch4/4-1',
+        'book/ch4/4-2',
+        'book/ch4/4-3',
+        'book/ch4/4-4',
+        'book/ch4/4-5',
+        'book/ch4/4-6',
+        'book/ch4/4-7',
+      ],
+    },
   ],
   bootcamp: [
     {
