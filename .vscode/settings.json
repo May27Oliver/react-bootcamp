@@ -11,6 +11,7 @@
     "fortawesome",
     "noopener",
     "noreferrer",
-    "onsubmit"
+    "onsubmit",
+    "opendata"
   ]
 }

@@ -60,7 +60,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Chapter 4 -在 JavaScript 中撰寫 CSS 樣式',
+      label: 'Chapter 4 - 在 JavaScript 中撰寫 CSS 樣式',
       items: [
         'book/ch4/4-1',
         'book/ch4/4-2',
@@ -69,6 +69,20 @@ module.exports = {
         'book/ch4/4-5',
         'book/ch4/4-6',
         'book/ch4/4-7',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Chapter 5 - 串接 API：useEffect 與 useCallback',
+      items: [
+        'book/ch5/5-1',
+        'book/ch5/5-2',
+        'book/ch5/5-3',
+        'book/ch5/5-4',
+        'book/ch5/5-5',
+        'book/ch5/5-6',
+        'book/ch5/5-7',
+        'book/ch5/5-8',
       ],
     },
   ],
