@@ -12,6 +12,7 @@
     "noopener",
     "noreferrer",
     "onsubmit",
-    "opendata"
+    "opendata",
+    "todos"
   ]
 }

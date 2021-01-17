@@ -1,5 +1,4 @@
 ---
-slug: /book
 id: 'create-react-app'
 title: 'CRA v4 建立專案方式異動'
 sidebar_label: 'CRA 建立專案方式異動'

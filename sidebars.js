@@ -107,5 +107,10 @@ module.exports = {
       label: 'Week2 - React 的元件拆分與資料流',
       items: ['bootcamp/week2/todo-mvc'],
     },
+    {
+      type: 'category',
+      label: 'Week3 - useEffect 與 API 串接',
+      items: ['bootcamp/week3/api-integration'],
+    },
   ],
 };
