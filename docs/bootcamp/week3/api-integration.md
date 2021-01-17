@@ -1,5 +1,5 @@
 ---
-title: '與後端 API 整合'
+title: '透過與後端 API 整合'
 keywords:
   - React Component
   - useEffect
@@ -24,22 +24,19 @@ $ npm install json-server
 {
   "todos": [
     {
-      "id": "f469b184-97df-4995-9851-5b65d074ed3c",
-      "title": "編輯 Todo 項目",
+      "title": "學習編輯的方式",
       "isDone": false,
-      "isEdit": false
+      "id": 1
     },
     {
-      "id": "a507d859-8ee5-4260-beee-3e0eac2a5124",
-      "title": "了解 useEffect 的基本使用",
+      "title": "學習 json-server",
       "isDone": false,
-      "isEdit": false
+      "id": 2
     },
     {
-      "id": "69a8fd73-9238-415d-9138-b3a2dbfb94e6",
-      "title": "自動 focus（useRef）",
+      "title": "學習 useEffect",
       "isDone": false,
-      "isEdit": false
+      "id": 3
     }
   ]
 }
@@ -67,9 +64,9 @@ export const getTodos = () => {
   return fetch(`${baseURL}/todos`).then((res) => res.json());
 };
 
-export const createTodo = (payload) => {
-  const { title, isDone, isEdit } = payload;
-  return fetch(`${baseURL}/todos`, {
+export const createTodo = async (payload) => {
+  const { title, isDone } = payload;
+  const res = await fetch(`${baseURL}/todos`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -77,20 +74,24 @@ export const createTodo = (payload) => {
     body: JSON.stringify({
       title,
       isDone,
-      isEdit,
     }),
-  }).then((res) => res.json);
+  });
+
+  return res.json();
 };
 
-export const deleteTodo = (id) => {
-  return fetch(`${baseURL}/todos/${id}`, {
+export const deleteTodo = async (id) => {
+  const res = await fetch(`${baseURL}/todos/${id}`, {
     method: 'DELETE',
-  }).then((res) => res.json);
+  });
+
+  return await res.json();
 };
 
-export const editTodo = (id, payload) => {
-  const { title, isDone, isEdit } = payload;
-  return fetch(`${baseURL}/todos/${id}`, {
+export const patchTodo = async (payload) => {
+  const { id, title, isDone } = payload;
+
+  const res = await fetch(`${baseURL}/todos/${id}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
@@ -98,9 +99,10 @@ export const editTodo = (id, payload) => {
     body: JSON.stringify({
       title,
       isDone,
-      isEdit,
     }),
-  }).then((res) => res.json);
+  });
+
+  return await res.json();
 };
 ```
 
@@ -113,7 +115,6 @@ useEffect(() => {
   createTodo({
     title: 'foobar',
     isDone: false,
-    isEdit: false,
   }).then((data) => console.log('data', data));
 
   deleteTodo('FsfWdWU');
@@ -121,14 +122,162 @@ useEffect(() => {
   editTodo('50BnTuY', {
     title: 'foobar',
     isDone: false,
-    isEdit: false,
   });
 }, []);
 ```
 
 ### Get Todos
 
+#### 在 useEffect 中使用 Promise
+
+在 useEffect 中使用 Promise 搭配 `.then()`：
+
+```jsx title="src/App.js"
+useEffect(() => {
+  getTodos().then((todos) => {
+    setTodos(
+      todos.map((todo) => ({
+        ...todo,
+        isEdit: false,
+      }))
+    );
+  });
+}, []);
+```
+
+#### 在 useEffect 中使用 async
+
+使用 async function：
+
+```jsx title="src/App.js
+useEffect(() => {
+  const fetchTodos = async () => {
+    const todos = await getTodos();
+
+    setTodos(
+      todos.map((todo) => ({
+        ...todo,
+        isEdit: false,
+      }))
+    );
+  };
+
+  fetchTodos();
+}, []);
+```
+
+### Update Todo
+
+```jsx title="/src/App.js"
+const handleToggleIsDone = (id) => async () => {
+  const currentTodo = todos.find((t) => t.id === id);
+  await patchTodo({
+    id,
+    isDone: !currentTodo.isDone,
+  });
+
+  setTodos((prevTodos) =>
+    prevTodos.map((todo) => {
+      if (todo.id !== id) {
+        return todo;
+      } else {
+        return {
+          ...todo,
+          isDone: !todo.isDone,
+        };
+      }
+    })
+  );
+};
+```
+
+```jsx title="src/App.js"
+const handleSave = async (payload) => {
+  const { id, title } = payload;
+  await patchTodo({
+    id,
+    title,
+  });
+
+  setTodos((prevTodos) =>
+    prevTodos.map((todo) => {
+      if (todo.id !== id) {
+        return todo;
+      }
+      return { ...todo, title, isEdit: false };
+    })
+  );
+};
+```
+
+### Delete Todo
+
+```jsx title="src/App"
+const handleDelete = (id) => async () => {
+  await deleteTodo(id);
+
+  setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+};
+```
+
+### Add Todo
+
+```jsx title="src/App.js
+const handleAddTodo = async () => {
+  if (inputValue.length === 0) {
+    return;
+  }
+
+  const data = await createTodo({
+    title: inputValue,
+    isDone: false,
+  });
+
+  setTodos((prevTodos) => {
+    return [
+      ...prevTodos,
+      {
+        ...data,
+        isEdit: false,
+      },
+    ];
+  });
+
+  setInputValue('');
+};
+```
+
+```jsx
+const handleKeyPress = async (event) => {
+  if (event.key !== 'Enter') {
+    return;
+  }
+
+  if (inputValue.length === 0) {
+    return;
+  }
+
+  const data = await createTodo({
+    title: inputValue,
+    isDone: false,
+  });
+
+  setTodos((prevTodos) => {
+    return [
+      ...prevTodos,
+      {
+        ...data,
+        isEdit: false,
+      },
+    ];
+  });
+
+  setInputValue('');
+};
+```
+
 ## 參考資料
 
 - [Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) @ MDN
 - [json-server](https://www.npmjs.com/package/json-server) @ npm
+- [A Complete Guide to useEffect](https://overreacted.io/a-complete-guide-to-useeffect/) @ overreacted
