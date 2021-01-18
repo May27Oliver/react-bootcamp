@@ -100,7 +100,7 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} PJCHENder. Built with Docusaurus.`,
     },
     googleAnalytics: {
-      trackingID: 'UA-39523593-4',
+      trackingID: '257641075',
     },
   },
   plugins: ['docusaurus-plugin-sass'],
