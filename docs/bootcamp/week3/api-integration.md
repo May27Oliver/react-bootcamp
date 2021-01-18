@@ -166,7 +166,19 @@ useEffect(() => {
 }, []);
 ```
 
+### Delete Todo
+
+```jsx title="src/App"
+const handleDelete = (id) => async () => {
+  await deleteTodo(id);
+
+  setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+};
+```
+
 ### Update Todo
+
+切換 `isDone` 狀態時呼叫 API
 
 ```jsx title="/src/App.js"
 const handleToggleIsDone = (id) => async () => {
@@ -191,6 +203,8 @@ const handleToggleIsDone = (id) => async () => {
 };
 ```
 
+當使用者「完成編輯」時呼叫 API：
+
 ```jsx title="src/App.js"
 const handleSave = async (payload) => {
   const { id, title } = payload;
@@ -210,17 +224,9 @@ const handleSave = async (payload) => {
 };
 ```
 
-### Delete Todo
-
-```jsx title="src/App"
-const handleDelete = (id) => async () => {
-  await deleteTodo(id);
-
-  setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
-};
-```
-
 ### Add Todo
+
+當使用者點擊「新增」按鈕時呼叫 API：
 
 ```jsx title="src/App.js
 const handleAddTodo = async () => {
@@ -246,6 +252,8 @@ const handleAddTodo = async () => {
   setInputValue('');
 };
 ```
+
+當使用者點擊「Enter」按鍵時呼叫 API：
 
 ```jsx
 const handleKeyPress = async (event) => {

@@ -110,7 +110,10 @@ module.exports = {
     {
       type: 'category',
       label: 'Week3 - useEffect 與 API 串接',
-      items: ['bootcamp/week3/api-integration'],
+      items: [
+        'bootcamp/week3/edit-todo-item',
+        'bootcamp/week3/api-integration',
+      ],
     },
   ],
 };
