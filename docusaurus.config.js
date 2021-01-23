@@ -99,8 +99,8 @@ module.exports = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} PJCHENder. Built with Docusaurus.`,
     },
-    googleAnalytics: {
-      trackingID: '257641075',
+    gtag: {
+      trackingID: 'G-51ZJ0BR90Z',
     },
   },
   plugins: ['docusaurus-plugin-sass'],
