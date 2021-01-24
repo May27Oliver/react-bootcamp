@@ -144,5 +144,16 @@ module.exports = {
         'bootcamp/week3/api-integration',
       ],
     },
+    {
+      type: 'category',
+      label: 'Week4 - 使用第三方登入',
+      items: [
+        'bootcamp/week4/switch-between-pages',
+        'bootcamp/week4/create-react-app-setting',
+        'bootcamp/week4/facebook-login',
+        'bootcamp/week4/custom-hooks',
+        'bootcamp/week4/use-context',
+      ],
+    },
   ],
 };
