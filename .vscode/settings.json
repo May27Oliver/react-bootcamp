@@ -13,6 +13,8 @@
     "noreferrer",
     "onsubmit",
     "opendata",
-    "todos"
+    "predeploy",
+    "todos",
+    "xfbml"
   ]
 }

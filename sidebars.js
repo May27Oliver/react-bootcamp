@@ -89,6 +89,35 @@ module.exports = {
         'book/ch5/5-8',
       ],
     },
+    {
+      type: 'category',
+      label: 'Chapter 6 - 進階資料處理與客製化 React Hooks',
+      items: [
+        'book/ch6/6-1',
+        'book/ch6/6-2',
+        'book/ch6/6-3',
+        'book/ch6/6-4',
+        'book/ch6/6-5',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Chapter 7 - 表單處理與頁面間的切換',
+      items: [
+        'book/ch7/7-1',
+        'book/ch7/7-2',
+        'book/ch7/7-3',
+        'book/ch7/7-4',
+        'book/ch7/7-5',
+        'book/ch7/7-6',
+        'book/ch7/7-7',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Chapter 8 - 網站部署與未來學習方向',
+      items: ['book/ch8/8-1', 'book/ch8/8-2', 'book/ch8/8-3'],
+    },
   ],
   bootcamp: [
     {
