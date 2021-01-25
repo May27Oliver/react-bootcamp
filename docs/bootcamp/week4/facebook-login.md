@@ -278,11 +278,22 @@ window.FB.api('/me', 'GET', { fields: 'name,email' }, function (response) {
 ```jsx {14,17} title="src/App.js"
 const App = () => {
   // ..
+
+  const isAtLogin = useRouteMatch('/login');
+
+  if (!response) {
+    return <></>;
+  }
+
+  if (response.status !== 'connected' && !isAtLogin) {
+    return <Redirect to="/login" />;
+  }
+
   return (
     <div className="app">
       <Switch>
         <Route exact path="/">
-          {response && response.status === 'connected' ? (
+          {response.status === 'connected' ? (
             <Redirect to="/todos" />
           ) : (
             <Redirect to="/login" />
