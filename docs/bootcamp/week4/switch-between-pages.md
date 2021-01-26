@@ -15,6 +15,39 @@ src/views
 └── TodoApp.js
 ```
 
+### views/TodoApp.js 和 components/Footer.js
+
+接著把原本寫在 `App.js` 中的內容搬一份到 `src/views/TodoApp.js` 中（內容幾乎一樣，就不重複撰寫）。
+
+接著在原本 Footer.js 加一個登出的按鈕，一樣透過 styled-components 進行樣式的修改：
+
+```jsx title="src/components/Footer.js"
+import styled from 'styled-components';
+
+const Container = styled.footer`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const LogoutBtn = styled.button`
+  font-size: 14px;
+  font-weight: 300;
+  margin: 2rem 0 1rem;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+const Footer = ({ numOfTodos }) => (
+  <Container>
+    <p>剩餘項目數：{numOfTodos}</p>
+    <LogoutBtn className="btn-reset">登出</LogoutBtn>
+  </Container>
+);
+
+export default Footer;
+```
+
 ### Login.js
 
 這裡我們使用 [styled-components](https://styled-components.com/docs) 來進行樣式的撰寫。因此先下載 styled-components：
@@ -68,39 +101,6 @@ const Login = () => {
 export default Login;
 ```
 
-### views/TodoApp.js 和 components/Footer.js
-
-接著把原本寫在 `App.js` 中的內容搬一份到 `src/views/TodoApp.js` 中（內容幾乎一樣，就不重複撰寫）。
-
-接著在原本 Footer.js 加一個登出的按鈕，一樣透過 styled-components 進行樣式的修改：
-
-```jsx title="src/components/Footer.js"
-import styled from 'styled-components';
-
-const Container = styled.footer`
-  display: flex;
-  justify-content: space-between;
-`;
-
-const LogoutBtn = styled.button`
-  font-size: 14px;
-  font-weight: 300;
-  margin: 2rem 0 1rem;
-  &:hover {
-    text-decoration: underline;
-  }
-`;
-
-const Footer = ({ numOfTodos }) => (
-  <Container>
-    <p>剩餘項目數：{numOfTodos}</p>
-    <LogoutBtn className="btn-reset">登出</LogoutBtn>
-  </Container>
-);
-
-export default Footer;
-```
-
 ## 建立 currentPage 狀態以切換頁面
 
 現就就可以透過建立一個 state 來達到切換頁面的目的：
@@ -142,9 +142,13 @@ ReactDOM.render(
 import { Switch, Route, Redirect, useRouteMatch } from 'react-router-dom';
 const App = () => {
   // ...
+  const isLogin = false;
 
-  const isLogin = true;
+  const isAtLogin = useRouteMatch('/login');
 
+  if (!isLogin && !isAtLogin) {
+    return <Redirect to="/login" />;
+  }
   return (
     <div className="app">
       <Switch>
