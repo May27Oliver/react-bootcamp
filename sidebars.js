@@ -4,6 +4,7 @@ module.exports = {
       type: 'category',
       label: '更新與勘誤',
       items: [
+        'book/errata/book',
         'book/errata/react-version',
         'book/errata/create-react-app',
         'book/errata/emotion',

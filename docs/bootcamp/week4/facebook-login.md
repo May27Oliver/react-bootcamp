@@ -159,7 +159,7 @@ const App = () => {
     // 跳出 Facebook 登入的對話框
     window.FB.login(
       function (response) {
-        console.log('handleFBLogout', response);
+        console.log('handleFBLogin', response);
       },
       { scope: 'public_profile,email' }
     );
