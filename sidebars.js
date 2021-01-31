@@ -156,5 +156,10 @@ module.exports = {
         'bootcamp/week4/use-context',
       ],
     },
+    {
+      type: 'category',
+      label: 'Week5 - 專案部署與未來學習方向',
+      items: ['bootcamp/week5/deployment'],
+    },
   ],
 };
