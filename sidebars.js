@@ -159,7 +159,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Week5 - 專案部署與未來學習方向',
-      items: ['bootcamp/week5/deployment'],
+      items: ['bootcamp/week5/pre-deployment', 'bootcamp/week5/deployment'],
     },
   ],
 };

@@ -341,6 +341,35 @@ const Footer = ({ numOfTodos, handleFBLogout }) => {
 };
 ```
 
+## 補充：伺服器端
+
+### 取得應用程式權杖
+
+> [取得應用程式權杖](https://developers.facebook.com/docs/facebook-login/access-tokens/#apptokens)
+
+```bash
+$ curl -X GET "https://graph.facebook.com/oauth/access_token ?client_id={your-app-id} &client_secret={your-app-secret} &grant_type=client_credentials"
+```
+
+或
+
+```bash
+curl -i -X GET "https://graph.facebook.com/{api-endpoint}&access_token={your-app_id}|{your-app_secret}"
+```
+
+### 檢查使用者存取權杖
+
+> [檢查存取權杖](https://developers.facebook.com/docs/facebook-login/manually-build-a-login-flow#checktoken)
+
+- input_toke 指的是使用者端登入後在 `authResponse` 中的 access_token
+- access_token 指的是根據上一個段落取得的應用程式存取權杖
+
+```http
+GET graph.facebook.com/debug_token?
+     input_token={token-to-inspect}
+     &access_token={app-token-or-admin-token}
+```
+
 ## 參考
 
 - [搭配 JavaScript SDK 的網頁版「Facebook 登入」](https://developers.facebook.com/docs/facebook-login/web?locale=zh_TW) @ Facebook Developers
