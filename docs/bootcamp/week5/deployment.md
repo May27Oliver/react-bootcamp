@@ -60,6 +60,10 @@ $ npm run deploy
 
 ### STEP 4：到 Github 專案中開啟 gh-pages
 
+在專案導覽列中可以找到 Settings，點進去後可以看到 Github Pages 的區塊，若尚未開啟，則將其開啟：
+
+![Imgur](https://i.imgur.com/TnvrYnL.png)
+
 ## 資料來源
 
 - [8-1 將「臺灣好天氣」部署到 Github Pages](https://pjchender.github.io/react-bootcamp/docs/book/ch8/8-1) @ 從 Hooks 開始，讓你的網頁 React 起來
